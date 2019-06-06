@@ -45,8 +45,11 @@ set tm=500
 
 " show location
 set cursorcolumn
-set cursorline
+nmap <C-H><C-H> :set invcursorcolumn<CR>
+" Toggle show location
 
+" Toggle relative line number
+nmap <C-L><C-L> :set invrelativenumber<CR>
 
 " movement
 set scrolloff=7                 " keep 3 lines when scrolling
@@ -76,9 +79,9 @@ set shiftround
 
 " indent
 set autoindent smartindent shiftround
-set shiftwidth=4
-set tabstop=4
-set softtabstop=4                " insert mode tab and backspace use 4 spaces
+set shiftwidth=2
+set tabstop=2
+set softtabstop=2                " insert mode tab and backspace use 2 spaces
 
 " NOT SUPPORT
 " fold
@@ -140,8 +143,8 @@ hi! link ShowMarksHLl DiffAdd
 hi! link ShowMarksHLu DiffChange
 
 " status line
-set statusline=%<%f\ %h%m%r%=%k[%{(&fenc==\"\")?&enc:&fenc}%{(&bomb?\",BOM\":\"\")}]\ %-14.(%l,%c%V%)\ %P
-set laststatus=2   " Always show the status line - use 2 lines for the status bar
+" set statusline=%<%f\ %h%m%r%=%k[%{(&fenc==\"\")?&enc:&fenc}%{(&bomb?\",BOM\":\"\")}]\ %-14.(%l,%c%V%)\ %P
+" set laststatus=2   " Always show the status line - use 2 lines for the status bar
 
 
 " ============================ specific file type ===========================
@@ -243,8 +246,8 @@ map Y y$
 nnoremap ; :
 
 " Shift+H goto head of the line, Shift+L goto end of the line
-nnoremap H ^
-nnoremap L $
+" nnoremap H ^
+" nnoremap L $
 
 " save
 cmap w!! w !sudo tee >/dev/null %
